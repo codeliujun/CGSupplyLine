@@ -1,0 +1,10 @@
+platform :ios, '7.0'
+
+pod 'Mantle'
+pod 'ReactiveCocoa'
+pod 'ASIHTTPRequest'
+pod 'XMLDictionary', '~> 1.4'
+pod 'MBProgressHUD', '~> 0.9.1'
+pod 'GPSKit', '~> 0.8.5'
+pod 'Masonry', '~> 0.6.1'
+pod 'SVProgressHUD', '~> 1.1.3'
