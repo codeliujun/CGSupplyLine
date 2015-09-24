@@ -31,6 +31,8 @@
 		8584E1E51BB39FE30084EB63 /* ZHChoLoginTypeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8584E1E31BB39FE30084EB63 /* ZHChoLoginTypeCell.xib */; settings = {ASSET_TAGS = (); }; };
 		859885C41B7843390087D9F3 /* ZHTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 859885C31B7843390087D9F3 /* ZHTextView.m */; };
 		859885D91B78941D0087D9F3 /* PulsingHaloLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 859885D81B78941D0087D9F3 /* PulsingHaloLayer.m */; };
+		85AC17EA1BB43081001F0592 /* ZHBuyerListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 85AC17E91BB43081001F0592 /* ZHBuyerListCell.m */; settings = {ASSET_TAGS = (); }; };
+		85AC17EC1BB43094001F0592 /* ZHBuyerListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85AC17EB1BB43094001F0592 /* ZHBuyerListCell.xib */; settings = {ASSET_TAGS = (); }; };
 		85CB59161BB107EE00A9E57B /* ZHBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 85CB59151BB107EE00A9E57B /* ZHBaseView.m */; settings = {ASSET_TAGS = (); }; };
 		85CBAF541B79EBB000E34F81 /* ZHCollectController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85CBAF521B79EBB000E34F81 /* ZHCollectController.m */; };
 		85CBAF551B79EBB000E34F81 /* ZHCollectController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85CBAF531B79EBB000E34F81 /* ZHCollectController.xib */; };
@@ -195,6 +197,9 @@
 		859885C31B7843390087D9F3 /* ZHTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHTextView.m; sourceTree = "<group>"; };
 		859885D71B78941D0087D9F3 /* PulsingHaloLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PulsingHaloLayer.h; sourceTree = "<group>"; };
 		859885D81B78941D0087D9F3 /* PulsingHaloLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PulsingHaloLayer.m; sourceTree = "<group>"; };
+		85AC17E81BB43081001F0592 /* ZHBuyerListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHBuyerListCell.h; sourceTree = "<group>"; };
+		85AC17E91BB43081001F0592 /* ZHBuyerListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHBuyerListCell.m; sourceTree = "<group>"; };
+		85AC17EB1BB43094001F0592 /* ZHBuyerListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZHBuyerListCell.xib; sourceTree = "<group>"; };
 		85CB59141BB107EE00A9E57B /* ZHBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHBaseView.h; sourceTree = "<group>"; };
 		85CB59151BB107EE00A9E57B /* ZHBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHBaseView.m; sourceTree = "<group>"; };
 		85CBAF511B79EBB000E34F81 /* ZHCollectController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHCollectController.h; sourceTree = "<group>"; };
@@ -918,6 +923,9 @@
 				851C5D551BB3FAD900043122 /* ZHSellInfoCell.h */,
 				851C5D561BB3FAD900043122 /* ZHSellInfoCell.m */,
 				851C5D571BB3FAD900043122 /* ZHSellInfoCell.xib */,
+				85AC17E81BB43081001F0592 /* ZHBuyerListCell.h */,
+				85AC17E91BB43081001F0592 /* ZHBuyerListCell.m */,
+				85AC17EB1BB43094001F0592 /* ZHBuyerListCell.xib */,
 				EFB0ABAB1B6E3276000033F2 /* BaseTableCell */,
 			);
 			path = TableCells;
@@ -1066,6 +1074,7 @@
 				EFB0AB771B6E2332000033F2 /* LICENSE in Resources */,
 				EFB0AB941B6E2CA3000033F2 /* ZHMoreController.xib in Resources */,
 				EFB0ABA91B6E30FD000033F2 /* ZHLoginController.xib in Resources */,
+				85AC17EC1BB43094001F0592 /* ZHBuyerListCell.xib in Resources */,
 				851C5D591BB3FAD900043122 /* ZHSellInfoCell.xib in Resources */,
 				8584E1E51BB39FE30084EB63 /* ZHChoLoginTypeCell.xib in Resources */,
 				EFB0AB9E1B6E2E2D000033F2 /* ico_me_press@2x.png in Resources */,
@@ -1143,6 +1152,7 @@
 				EFB0AB201B6D7F48000033F2 /* UITableView+Additions.m in Sources */,
 				EFB0AB791B6E2332000033F2 /* RIButtonItem.m in Sources */,
 				EFB0AB551B6E076D000033F2 /* ZHRequestNetworkInterface.m in Sources */,
+				85AC17EA1BB43081001F0592 /* ZHBuyerListCell.m in Sources */,
 				EFF75AB31B8E77140097CF17 /* ZHNetworkEntityClass.m in Sources */,
 				85279ACA1B7463DD00D54400 /* LIUContentView.m in Sources */,
 				EFB0AB6B1B6E20CE000033F2 /* LoadMoreCell.m in Sources */,

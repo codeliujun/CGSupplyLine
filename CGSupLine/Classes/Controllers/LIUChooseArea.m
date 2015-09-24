@@ -54,16 +54,30 @@
 
 - (void)getData {
     WS(ws);
-    /*provinceid={provinceid}&cityid={cityid}*/
-    [self requestMethod:@"Address/search" parameter:@{@"provinceid":self.provinceid,
-                                                      @"cityid":self.cityid}
-    Success:^(NSDictionary *result) {
-        ws.areaList = result[@"Data"];
-        [ws.tableView reloadData];
-    } Error:^(NSDictionary *error) {
-        
-    }];
     
+    if (self.currentArreaType == AreaTypeShop) {
+    /*api/Shop/search?keywords={keywords}&provinceid={provinceid}&cityid={cityid}&areaid={areaid}&pageindex={pageindex}&pagesize={pagesize}*/
+        [self requestMethod:@"Shop/search" parameter:@{@"keywords":@"",@"provinceid":self.provinceid,@"cityid":self.cityid,@"areaid":self.areaid,@"pageindex":@1,@"pagesize":@40} Success:^(NSDictionary *result) {
+            
+            ws.areaList = result[@"Data"];
+            [ws.tableView reloadData];
+            
+        } Error:^(NSDictionary *error) {
+            
+        }];
+        
+    }
+    else {
+        /*provinceid={provinceid}&cityid={cityid}*/
+        [self requestMethod:@"Address/search" parameter:@{@"provinceid":self.provinceid,
+                                                          @"cityid":self.cityid}
+                    Success:^(NSDictionary *result) {
+                        ws.areaList = result[@"Data"];
+                        [ws.tableView reloadData];
+                    } Error:^(NSDictionary *error) {
+                        
+                    }];
+    }
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -82,7 +96,11 @@
     
     NSDictionary *area = self.areaList[indexPath.row];
     
-    cell.textLabel.text = area[@"Name"];
+    if (self.currentArreaType == AreaTypeShop) {
+        cell.textLabel.text = area[@"FullName"];
+    }else {
+        cell.textLabel.text = area[@"Name"];
+    }
     return cell;
 }
 
@@ -102,7 +120,7 @@
                 [mDic setValue:currentDic forKey:@"province"];
                 if (ws.chooseAreaBlock) {
                     ws.chooseAreaBlock(mDic);
-                   // [ws.navigationController popViewControllerAnimated:YES];
+                    // [ws.navigationController popViewControllerAnimated:YES];
                     [ws dismissViewControllerAnimated:YES completion:nil];
                 }
                 
@@ -115,6 +133,7 @@
         {
             chooseArea.currentArreaType = AreaTypeArea;
             chooseArea.provinceid = @"";//self.provinceid;
+            //chooseArea.reallProvinceid = self.provinceid;
             chooseArea.cityid = currentDic[@"Id"];
             chooseArea.areaTitle = currentDic[@"Name"];
             chooseArea.chooseAreaBlock = ^(NSDictionary *dic) {
@@ -129,14 +148,44 @@
             [self.navigationController pushViewController:chooseArea animated:YES];
         }
             break;
-            
+         /*
         case AreaTypeArea://当前是区域
         {
             NSDictionary *mDic = @{@"area":currentDic};
+            if (ws.chooseAreaBlock) {
+                ws.chooseAreaBlock(mDic);
+                [ws.navigationController popViewControllerAnimated:YES];
+            }
+        }
+            break;
+            */
+            case AreaTypeArea://当前是区域 下一个就要显示shop了
+        {
+            chooseArea.currentArreaType = AreaTypeShop;
+            chooseArea.provinceid = @"";
+            chooseArea.cityid = @"";
+            chooseArea.areaid = currentDic[@"Id"];
+            chooseArea.areaTitle = currentDic[@"Name"];
+            chooseArea.chooseAreaBlock = ^(NSDictionary *dic) {
+                NSMutableDictionary *mDic = [NSMutableDictionary dictionaryWithDictionary:dic];
+                [mDic setValue:currentDic forKey:@"area"];
                 if (ws.chooseAreaBlock) {
                     ws.chooseAreaBlock(mDic);
-                    [ws.navigationController popViewControllerAnimated:YES];
+                    [ws.navigationController popToRootViewControllerAnimated:YES];
                 }
+            };
+            [self.navigationController pushViewController:chooseArea animated:YES];
+        }
+            break;
+            
+            case AreaTypeShop:
+        {
+            NSDictionary *mDic = @{@"shop":currentDic};
+            if (ws.chooseAreaBlock) {
+                ws.chooseAreaBlock(mDic);
+                [ws.navigationController popViewControllerAnimated:YES];
+            }
+            
         }
             break;
             

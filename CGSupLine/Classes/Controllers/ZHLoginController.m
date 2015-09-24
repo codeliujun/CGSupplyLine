@@ -52,6 +52,7 @@
         [ZHConfigObj configObject].userObject = obj;
         [ws saveInfo:dic];
         [ws.navigationController popViewControllerAnimated:YES];
+   
     } Error:^(NSDictionary *error) {
         
     }];

@@ -89,9 +89,11 @@
     NSDictionary *dic1 = dic[@"province"];
     NSDictionary *dic2 = dic[@"city"];
     NSDictionary *dic3 = dic[@"area"];
-    
-    
-    NSString *areaStr = [NSString stringWithFormat:@"%@,%@,%@",dic1[@"Name"],dic2[@"Name"],dic3[@"Name"]];
+    NSDictionary *dic4 = dic[@"shop"];
+    ZHUserObj *obj = [ZHConfigObj configObject].userObject;
+    obj.shopId = dic4[@"Id"];
+    NSLog(@"%@",dic4);
+    NSString *areaStr = [NSString stringWithFormat:@"%@,%@,%@,%@",dic1[@"Name"],dic2[@"Name"],dic3[@"Name"],dic4[@"FullName"]];
     [_headerView setCustomViewContent:areaStr];
 }
 
@@ -137,3 +139,21 @@
 
 
 @end
+
+/*
+ http://api.coolgou.com/api/scm/subscribelist?shopid=1c0d6e5a-45bd-4f0a-b625-a50e00dbdea6&date=2015-09-15&pageindex=1&pagesize=10&status=-1   这是审核清单列表
+ 曾招林  22:15:29
+ http://api.coolgou.com/api/scm/subscribedetail?id=7fbfa5b2-afe6-4018-8470-a51400c41399  这是详情
+ 一坨会飞的翔 1016  22:15:31
+ 
+ 曾招林  22:16:15
+ http://api.coolgou.com/api/scm/shoptopsell?shopid=fe446deb-7e80-4ad3-b1c4-a4fa00a346ca&pageindex=1&pagesize=10&enddate=2015-09-21&startdate=2015-08-01
+ 曾招林  22:16:27
+ 这是  消费排行，只取前10
+ 曾招林  22:16:53
+ http://api.coolgou.com/api/scm/shopsellreport?shopid=fe446deb-7e80-4ad3-b1c4-a4fa00a346ca&enddate=2015-09-21&startdate=2015-08-01  这是销售统计报表
+ 曾招林  22:17:50
+ http://api.coolgou.com/api/scm/shopsellreport?shopid=fe446deb-7e80-4ad3-b1c4-a4fa00a346ca&enddate=2015-09-21&startdate=2015-08-01 每日销售明细
+ 
+ */
+

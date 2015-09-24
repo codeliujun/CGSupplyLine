@@ -32,4 +32,6 @@
 
 @property (nonatomic, copy) NSString *ThumbUrl;
 
+@property (nonatomic,strong)NSString *shopId;
+
 @end

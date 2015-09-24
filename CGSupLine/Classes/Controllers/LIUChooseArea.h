@@ -13,6 +13,7 @@ typedef NS_ENUM(NSInteger, AreaType) {
     AreaTypeProvince,
     AreaTypeCityid,
     AreaTypeArea,
+    AreaTypeShop,
 };
 typedef void (^DidChooseAreaBlock) (NSDictionary *);
 
@@ -22,9 +23,13 @@ typedef void (^DidChooseAreaBlock) (NSDictionary *);
 
 @property (nonatomic,assign)AreaType currentArreaType;
 
-@property (nonatomic,strong)NSString *provinceid;
+@property (nonatomic,strong)NSString *provinceid;//这个是传参用的
+
+//@property (nonatomic,strong)NSString *reallProvinceid;//这个是传数据用的
 
 @property (nonatomic,strong)NSString *cityid;
+
+@property (nonatomic,strong)NSString *areaid;
 
 @property (nonatomic,strong)NSString *areaTitle;
 
