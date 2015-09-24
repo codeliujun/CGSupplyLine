@@ -9,17 +9,27 @@
 
 @interface ZHUserObj : MTLModel <MTLJSONSerializing>
 
-//{"ret":0,"token":"39734eaeecb42996e0a785cb188828aa","msg":"登陆成功","data":{"id":"15","phone":"15618388363","pwd":"6f38c8e2c9be93d4a01b39f89f45e9ae","reg_time":"2015-07-14 21:40:00","user_type":"1","device_type":"1","update_time":"0000-00-00 00:00:00"}}
-@property (nonatomic, copy) NSString *id;                   //
-@property (nonatomic, copy) NSString *pwd;                  // 登陆用到的验证码
-@property (nonatomic, copy) NSString *phone;                // 手机号
-@property (nonatomic, copy) NSString *token;                // token
 
-@property (nonatomic, copy) NSString *password;                 // 密码
-@property (nonatomic, copy) NSString *username;                 // 用户名
+@property (nonatomic, copy) NSString *loginid;
 
+@property (nonatomic, copy) NSString *mobile;
 
-@property (nonatomic, copy) NSString *real_name;            //用户名
-@property (nonatomic, copy) NSString *sex;
+@property (nonatomic, copy) NSString *Id;
+
+@property (nonatomic, copy) NSString *Code;
+
+@property (nonatomic, copy) NSString *lastname;
+
+@property (nonatomic, assign) NSInteger Balance;
+
+@property (nonatomic, copy) NSString *ThumbFileId;
+
+@property (nonatomic, copy) NSString *email;
+
+@property (nonatomic, assign) NSInteger IntegralNumber;
+
+@property (nonatomic, assign) NSInteger Level;
+
+@property (nonatomic, copy) NSString *ThumbUrl;
 
 @end

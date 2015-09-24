@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZHCollectController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZHSellInfoController">
             <connections>
-                <outlet property="tableView" destination="CVB-ff-NYb" id="cOF-iC-tfR"/>
-                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="tableView" destination="5VQ-9p-Eql" id="7pn-og-4pH"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="DZz-mW-zNq"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -15,23 +15,23 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="CVB-ff-NYb" customClass="BCTableView">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5VQ-9p-Eql" customClass="BCTableView">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <connections>
-                        <outlet property="dataSource" destination="-1" id="d6J-EC-gTO"/>
-                        <outlet property="delegate" destination="-1" id="aN7-5k-4IA"/>
+                        <outlet property="dataSource" destination="-1" id="GI4-O1-dXf"/>
+                        <outlet property="delegate" destination="-1" id="J5E-uG-rmQ"/>
                     </connections>
                 </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="CVB-ff-NYb" secondAttribute="trailing" id="5bJ-z1-Ucm"/>
-                <constraint firstAttribute="bottom" secondItem="CVB-ff-NYb" secondAttribute="bottom" id="JnF-BG-QqM"/>
-                <constraint firstItem="CVB-ff-NYb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="YzJ-VF-l4M"/>
-                <constraint firstItem="CVB-ff-NYb" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="iKz-HP-Km0"/>
+                <constraint firstItem="5VQ-9p-Eql" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="BHU-uu-drp"/>
+                <constraint firstAttribute="trailing" secondItem="5VQ-9p-Eql" secondAttribute="trailing" id="T9x-Ab-R32"/>
+                <constraint firstAttribute="bottom" secondItem="5VQ-9p-Eql" secondAttribute="bottom" id="f7n-zP-A4a"/>
+                <constraint firstItem="5VQ-9p-Eql" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="v50-HM-TIl"/>
             </constraints>
-            <point key="canvasLocation" x="340" y="203"/>
+            <point key="canvasLocation" x="245" y="319"/>
         </view>
     </objects>
 </document>

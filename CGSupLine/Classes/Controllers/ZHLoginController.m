@@ -30,14 +30,42 @@
     self.title = @"登陆";
 }
 
+
 - (void)creatCell {
-    
+    WS(ws);
     _loginCell = [ZHLoginCell cell];
     
     _loginCell.didTapLoginBlock = ^(NSDictionary *dic) {
-        
+        [ws loginWithDic:dic];
     };
     
+}
+
+- (void)loginWithDic:(NSDictionary *)dic {
+    WS(ws);
+    NSString *phone = dic[@"phone"];
+    NSString *pwd = dic[@"pwd"];
+    
+    [self requestMethod:@"User/login" parameter:@{@"username":phone,@"pwd":pwd,@"logintype":@"0"} Success:^(NSDictionary *result) {
+        
+        ZHUserObj *obj = [ZHUserObj objectWithKeyValues:result[@"Data"]];
+        [ZHConfigObj configObject].userObject = obj;
+        [ws saveInfo:dic];
+        [ws.navigationController popViewControllerAnimated:YES];
+    } Error:^(NSDictionary *error) {
+        
+    }];
+    
+    
+    
+}
+
+- (void)saveInfo:(NSDictionary *)dic {
+    BOOL  isRemember = [dic[@"isRemember"] boolValue];
+   // NSString *type = dic[@"type"];
+    if (isRemember) {
+        [ZHConfigObj saveLoginInfo:dic];
+    }
 }
 
 

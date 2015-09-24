@@ -21,12 +21,6 @@
 
 @implementation ZHButton
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    self.layer.cornerRadius = 5.0;
-    self.layer.masksToBounds = YES;
-}
-
 #pragma mark- init
 
 - (id)initWithFrame:(CGRect)frame                        title:(NSString *)title
@@ -114,7 +108,7 @@
     self = [super initWithCoder:aDecoder];
     if (self) {
         [self setup];
-        [self setColor:kBlueBtnNormalColor highlightColor:kBlueBtnSelectedColor];
+        //[self setColor:kBlueBtnNormalColor highlightColor:kBlueBtnSelectedColor];
     }
     return self;
 }

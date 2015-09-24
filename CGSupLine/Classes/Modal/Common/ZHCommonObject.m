@@ -63,7 +63,7 @@ static ZHCommonObject *oneObject = nil;
 + (BOOL)checkLogin:(UIViewController *)controller {
     ZHUserObj *userObj = [ZHConfigObj configObject].userObject;
     BOOL isLogin = YES;
-    if (userObj.token.length == 0) {
+    if (userObj.Id.length == 0) {
         isLogin = NO;
 //        BCLoginController *loginController = [[BCLoginController alloc] init];
 //        BCBaseNavigationController *nav = [[BCBaseNavigationController alloc] initWithRootViewController:loginController];

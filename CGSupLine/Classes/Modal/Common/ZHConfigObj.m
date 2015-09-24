@@ -34,6 +34,7 @@ static ZHConfigObj *configObj = nil;
         NSLog(@"写入失败");
     }
     
+    
 }
 + (NSDictionary *)getLoginInfo {
     
@@ -78,17 +79,17 @@ static ZHConfigObj *configObj = nil;
     return self;
 }
 
-- (ZHUserObj *)userObject {
-    if (!_userObject) {
-        _userObject = (ZHUserObj *)[[ZHCache sharedCache] objectForKey:kUserInfo];
-    }
-    
-    if (!_userObject) {
-        _userObject = [[ZHUserObj alloc] init];
-    }
-    
-    return _userObject;
-}
+//- (ZHUserObj *)userObject {
+//    if (!_userObject) {
+//        _userObject = (ZHUserObj *)[[ZHCache sharedCache] objectForKey:kUserInfo];
+//    }
+//    
+//    if (!_userObject) {
+//        _userObject = [[ZHUserObj alloc] init];
+//    }
+//    
+//    return _userObject;
+//}
 
 - (void)save {
     [[ZHCache sharedCache] setObject:_userObject forKey:kUserInfo];

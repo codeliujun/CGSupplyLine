@@ -9,9 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "ZHNetworkInterface.h"
 
-#define kServerIP       @"http://218.17.122.211:8080"
+#define kServerIP       @"http://api.coolgou.com"
 //#define kServerIP       @"http://192.168.0.233"
-#define kApiUrl                 [NSString stringWithFormat:@"%@/Api", kServerIP]
+#define kApiUrl                 [NSString stringWithFormat:@"%@/api", kServerIP]
 #define kGetRequestUrl(method)  [NSString stringWithFormat:@"%@/%@", kApiUrl, method]
 #define kGetImageUrl(relativePath)    [NSString stringWithFormat:@"%@%@", kServerIP, relativePath]
 

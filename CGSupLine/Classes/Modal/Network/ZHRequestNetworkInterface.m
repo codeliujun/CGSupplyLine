@@ -73,10 +73,10 @@
     NSString *formatUrl = nil;
     NSString *url = [self getUrl:method];
     
-    ZHUserObj *userObj = [ZHConfigObj configObject].userObject;
-    if (userObj.token) {
-        [bodyStr appendFormat:@"%@=%@&", @"token", userObj.token];
-    }
+//    ZHUserObj *userObj = [ZHConfigObj configObject].userObject;
+//    if (userObj.token) {
+//        [bodyStr appendFormat:@"%@=%@&", @"token", userObj.token];
+//    }
     
     if (parameters) {
         NSMutableDictionary *newParamaters = [NSMutableDictionary dictionaryWithDictionary:parameters];

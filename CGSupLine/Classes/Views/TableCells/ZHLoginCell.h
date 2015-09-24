@@ -14,4 +14,6 @@ typedef void (^DidTapLoginButtonBlock) (NSDictionary*);
 
 @property (nonatomic,copy) DidTapLoginButtonBlock didTapLoginBlock;
 
+
+
 @end

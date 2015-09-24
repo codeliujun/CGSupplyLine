@@ -276,19 +276,10 @@
 }
 
 - (void)requestMethod:(NSString *)method parameter:(NSDictionary *)parameters {
-//    if (self.isShowIndicator) {
-//        [self show];
-//    }
-//    [[ZHRequestManager requestManager] requestMethod:method parameter:parameters successHandler:^(NSDictionary *result) {
-//        [self dismiss];
-//        [self requestSuccess:result];
-//    } errorHandler:^(NSDictionary *errorDic) {
-//        [self dismiss];
-//        [self requestError:errorDic];
-//    }];
+    
     WS(ws);
     interface = [ZHRequestNetworkInterface interfaceWithFinshBlock:^(id responseObje) {
-        if ([[responseObje objectForKey:@"ret"] intValue] == 0) {
+        if ([[responseObje objectForKey:@"ErrorCode"] intValue] == 200) {
             [ws requestSuccess:responseObje];
         } else {
             [ws requestError:responseObje];
@@ -304,23 +295,19 @@
 
     NSMutableArray *array = [NSMutableArray array];
     // 添加token参数
-    ZHUserObj *userObj = [ZHConfigObj configObject].userObject;
-    if (userObj.token) {
-        [array addParameter:@"token" parameterValue:userObj.token parameterType:ZHNetworkParameterTypeDefault];
-    }
+//    ZHUserObj *userObj = [ZHConfigObj configObject].userObject;
+//    if (userObj.token) {
+//        [array addParameter:@"token" parameterValue:userObj.token parameterType:ZHNetworkParameterTypeDefault];
+//    }
     
     NSArray *allkeys = [parameters allKeys];
     NSString *key = nil, *value = nil;
     for(int i = 0; i < [allkeys count]; i++) {
         key = [allkeys objectAtIndex:i];
         value = [parameters objectForKey:key];
-//        if ([key containsString:@"imgStr"]) {
-//            [array addParameter:key parameterValue:value parameterType:ZHNetworkParameterTypeDefault];
-//        } else {
             [array addParameter:key parameterValue:value parameterType:ZHNetworkParameterTypeDefault];
-//        }
     }
-    [interface starLoadInformationWithParameters:array URLString:kGetRequestUrl(method) connectType:ZHNetworkTypePost];
+    [interface starLoadInformationWithParameters:array URLString:kGetRequestUrl(method) connectType:ZHNetworkTypeGet];
 }
 
 - (void)requestMethod:(NSString *)method parameter:(NSDictionary *)parameters Success:(SuccessBlock)success Error:(ErrorBlock)error {
@@ -343,7 +330,7 @@
 
 - (void)requestError:(NSDictionary *)error {
     DBLog(@"request error: %@", error);
-    [self showToast:[error objectForKey:@"error"]];
+    [self showToast:[error objectForKey:@"Message"]];
     if (_errorBlock) {
         _errorBlock(error);
         //_errorBlock = nil;
@@ -425,7 +412,7 @@
 - (BOOL)userIsLogin {
     ZHUserObj *userObj = [ZHConfigObj configObject].userObject;
     
-    if (userObj.token.length == 0) {
+    if (userObj.Id.length == 0) {
         return NO;
     }else {
         return YES;
