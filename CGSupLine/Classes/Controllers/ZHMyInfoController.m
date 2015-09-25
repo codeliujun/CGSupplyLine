@@ -7,6 +7,7 @@
 //
 
 #import "ZHMyInfoController.h"
+#import "ZHSellDetailController.h"
 #import "ZHBuyerListCell.h"
 
 @interface ZHMyInfoController ()
@@ -50,7 +51,7 @@
     ZHBuyerListCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([ZHBuyerListCell class]) forIndexPath:indexPath];
     cell.data = self.dataListArray[indexPath.row];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.backgroundColor = [UIColor clearColor];
+    //cell.backgroundColor = [UIColor clearColor];
     return cell;
 
 }
@@ -61,6 +62,14 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
     return [UIView new];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    ZHSellDetailController *sellDetail = [[ZHSellDetailController alloc]init];
+    sellDetail.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:sellDetail animated:YES];
+    
 }
 
 @end
