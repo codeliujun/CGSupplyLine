@@ -38,7 +38,8 @@
 - (void)creatTableHeaderView {
     WS(ws);
     _headerView = [ZHMainHeaderView view];
-    [_headerView setCustomViewContent:@"请选择门店地区"];
+    NSString *areaStr = [ZHConfigObj configObject].userObject.shopName;
+    [_headerView setCustomViewContent:areaStr];
     _headerView.didTapChooseAreaBlock = ^() {
         [ws chooseArea];
     };
@@ -99,9 +100,9 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    if ([self userIsLogin]) {
-        [self showLoginView];
-    }
+//    if ([self userIsLogin]) { //不要判断了
+//        [self showLoginView];
+//    }
 }
 
 

@@ -36,6 +36,8 @@
 		85777E571BB4EF29003343AB /* UIImage+GetUrlImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 85777E561BB4EF29003343AB /* UIImage+GetUrlImage.m */; settings = {ASSET_TAGS = (); }; };
 		85777E5B1BB4F4F5003343AB /* ZHBuyChartCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 85777E591BB4F4F5003343AB /* ZHBuyChartCell.m */; settings = {ASSET_TAGS = (); }; };
 		85777E5C1BB4F4F5003343AB /* ZHBuyChartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85777E5A1BB4F4F5003343AB /* ZHBuyChartCell.xib */; settings = {ASSET_TAGS = (); }; };
+		85777E5F1BB51C35003343AB /* ZHNoDataCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 85777E5E1BB51C35003343AB /* ZHNoDataCell.m */; settings = {ASSET_TAGS = (); }; };
+		85777E611BB51C46003343AB /* ZHNoDataCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85777E601BB51C46003343AB /* ZHNoDataCell.xib */; settings = {ASSET_TAGS = (); }; };
 		8584E1E41BB39FE30084EB63 /* ZHChoLoginTypeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8584E1E21BB39FE30084EB63 /* ZHChoLoginTypeCell.m */; settings = {ASSET_TAGS = (); }; };
 		8584E1E51BB39FE30084EB63 /* ZHChoLoginTypeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8584E1E31BB39FE30084EB63 /* ZHChoLoginTypeCell.xib */; settings = {ASSET_TAGS = (); }; };
 		859885C41B7843390087D9F3 /* ZHTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 859885C31B7843390087D9F3 /* ZHTextView.m */; };
@@ -213,6 +215,9 @@
 		85777E581BB4F4F5003343AB /* ZHBuyChartCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHBuyChartCell.h; sourceTree = "<group>"; };
 		85777E591BB4F4F5003343AB /* ZHBuyChartCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHBuyChartCell.m; sourceTree = "<group>"; };
 		85777E5A1BB4F4F5003343AB /* ZHBuyChartCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZHBuyChartCell.xib; sourceTree = "<group>"; };
+		85777E5D1BB51C35003343AB /* ZHNoDataCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHNoDataCell.h; sourceTree = "<group>"; };
+		85777E5E1BB51C35003343AB /* ZHNoDataCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHNoDataCell.m; sourceTree = "<group>"; };
+		85777E601BB51C46003343AB /* ZHNoDataCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZHNoDataCell.xib; sourceTree = "<group>"; };
 		8584E1E11BB39FE30084EB63 /* ZHChoLoginTypeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHChoLoginTypeCell.h; sourceTree = "<group>"; };
 		8584E1E21BB39FE30084EB63 /* ZHChoLoginTypeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHChoLoginTypeCell.m; sourceTree = "<group>"; };
 		8584E1E31BB39FE30084EB63 /* ZHChoLoginTypeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZHChoLoginTypeCell.xib; sourceTree = "<group>"; };
@@ -963,6 +968,9 @@
 				85777E581BB4F4F5003343AB /* ZHBuyChartCell.h */,
 				85777E591BB4F4F5003343AB /* ZHBuyChartCell.m */,
 				85777E5A1BB4F4F5003343AB /* ZHBuyChartCell.xib */,
+				85777E5D1BB51C35003343AB /* ZHNoDataCell.h */,
+				85777E5E1BB51C35003343AB /* ZHNoDataCell.m */,
+				85777E601BB51C46003343AB /* ZHNoDataCell.xib */,
 				EFB0ABAB1B6E3276000033F2 /* BaseTableCell */,
 			);
 			path = TableCells;
@@ -1124,6 +1132,7 @@
 				EFB0AB7C1B6E2332000033F2 /* UIAlertView-Blocks.podspec in Resources */,
 				EFB0ABA11B6E2E2D000033F2 /* ico_order_norm@2x.png in Resources */,
 				851C5D631BB4DD6700043122 /* ZHSellDetailController.xib in Resources */,
+				85777E611BB51C46003343AB /* ZHNoDataCell.xib in Resources */,
 				EFB0AAD11B6D7B5A000033F2 /* Main.storyboard in Resources */,
 				851C5D681BB4E11E00043122 /* ZHBuyDetailHeaderCell.xib in Resources */,
 				EFB0AB6C1B6E20CE000033F2 /* LoadMoreCell.xib in Resources */,
@@ -1238,6 +1247,7 @@
 				85777E5B1BB4F4F5003343AB /* ZHBuyChartCell.m in Sources */,
 				EFB0ABA81B6E30FD000033F2 /* ZHLoginController.m in Sources */,
 				85279ACC1B7463DD00D54400 /* LIUMouthView.m in Sources */,
+				85777E5F1BB51C35003343AB /* ZHNoDataCell.m in Sources */,
 				EFB0AB1B1B6D7F48000033F2 /* NSString+Additions.m in Sources */,
 				85D4B2011B7C6FCC00C274DF /* MJProperty.m in Sources */,
 				85CEC5B11B722AF500DA5FB3 /* NSTimer+Addition.m in Sources */,

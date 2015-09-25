@@ -426,5 +426,12 @@
     [self.navigationController pushViewController:controller animated:YES];
 }
 
+- (NSString *)getShopId {
+    
+    ZHUserObj *obj = [ZHConfigObj configObject].userObject;
+    
+    return obj.shopId;
+    
+}
 
 @end
