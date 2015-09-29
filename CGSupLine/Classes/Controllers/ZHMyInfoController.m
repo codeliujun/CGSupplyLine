@@ -51,7 +51,7 @@
 //        
 //    }];
     
-    [self requestMethod:@"scm/subscribelist" parameter:@{@"shopid":[self getShopId],@"date":[self getEndDate],@"status":@(-1)}];
+    [self requestMethod:@"scm/subscribelist" parameter:@{@"userid":[self getUserId],@"date":[self getEndDate],@"status":@(-1)}];
     
 }
 

@@ -434,4 +434,10 @@
     
 }
 
+- (NSString *)getUserId {
+    ZHUserObj *obj = [ZHConfigObj configObject].userObject;
+    
+    return obj.Id;
+}
+
 @end

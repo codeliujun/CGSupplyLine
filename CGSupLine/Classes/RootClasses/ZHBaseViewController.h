@@ -79,6 +79,7 @@ typedef void (^ErrorBlock) (NSDictionary *error);
 - (BOOL)userIsLogin;
 - (void)showLoginView;
 - (NSString *)getShopId;
+- (NSString *)getUserId;
 
 ////推出下一个界面，然后返回一个状态码
 //- (void)pushViewController:(UIViewController *)controller Animated:(BOOL)animated Back

@@ -297,7 +297,7 @@
 		EF5F1ACE1B7AF23F0093D55A /* ZHImageOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHImageOperation.h; sourceTree = "<group>"; };
 		EF8391CC1B9335C20025C422 /* ZHApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHApplication.h; sourceTree = "<group>"; };
 		EF8391CD1B9335C20025C422 /* ZHApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHApplication.m; sourceTree = "<group>"; };
-		EFB0AAC21B6D7B5A000033F2 /* CGSupLine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CGSupLine.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EFB0AAC21B6D7B5A000033F2 /* 供应链.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "供应链.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFB0AAC61B6D7B5A000033F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EFB0AAC71B6D7B5A000033F2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EFB0AAC91B6D7B5A000033F2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -606,7 +606,7 @@
 		EFB0AAC31B6D7B5A000033F2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EFB0AAC21B6D7B5A000033F2 /* CGSupLine.app */,
+				EFB0AAC21B6D7B5A000033F2 /* 供应链.app */,
 				EFB0AADB1B6D7B5A000033F2 /* CGSupLine.xctest */,
 			);
 			name = Products;
@@ -1044,7 +1044,7 @@
 			);
 			name = CGSupLine;
 			productName = ZHTourist;
-			productReference = EFB0AAC21B6D7B5A000033F2 /* CGSupLine.app */;
+			productReference = EFB0AAC21B6D7B5A000033F2 /* 供应链.app */;
 			productType = "com.apple.product-type.application";
 		};
 		EFB0AADA1B6D7B5A000033F2 /* CGSupLineTests */ = {
@@ -1365,6 +1365,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1409,6 +1410,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1433,6 +1435,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1445,9 +1448,9 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "$(inherited)";
 				PODS_ROOT = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.xky.zhihuilvyou;
-				PRODUCT_NAME = CGSupLine;
-				PROVISIONING_PROFILE = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ykg.supplyline;
+				PRODUCT_NAME = "供应链";
+				PROVISIONING_PROFILE = "168abb26-900d-465a-9425-a58661f5107a";
 				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Debug;
@@ -1459,6 +1462,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1471,9 +1475,9 @@
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "$(inherited)";
 				PODS_ROOT = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.xky.zhihuilvyou;
-				PRODUCT_NAME = CGSupLine;
-				PROVISIONING_PROFILE = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ykg.supplyline;
+				PRODUCT_NAME = "供应链";
+				PROVISIONING_PROFILE = "168abb26-900d-465a-9425-a58661f5107a";
 				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Release;
@@ -1492,7 +1496,7 @@
 				);
 				INFOPLIST_FILE = CGSupLineTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.wansheng.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ykg.supplyline;
 				PRODUCT_NAME = CGSupLine;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CGSupLine.app/CGSupLine";
 			};
@@ -1508,7 +1512,7 @@
 				);
 				INFOPLIST_FILE = CGSupLineTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.wansheng.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ykg.supplyline;
 				PRODUCT_NAME = CGSupLine;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CGSupLine.app/CGSupLine";
 			};
