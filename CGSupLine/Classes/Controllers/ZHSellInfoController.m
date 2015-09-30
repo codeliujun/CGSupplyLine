@@ -70,7 +70,7 @@
 //        } Error:^(NSDictionary *error) {
 //            
 //        }];
-        [self requestMethod:@"scm/shopsellreport" parameter:@{@"userid":[self getUserId],@"enddate":[self getEndDate],@"startdate":@"2015-08-01"}];
+        [self requestMethod:@"SCM/sellreport" parameter:@{@"userid":[self getUserId],@"enddate":[self getEndDate],@"startdate":@"2015-08-01"}];
     }
     
     if (self.type == ControllerTypeDayList) {
@@ -83,7 +83,7 @@
 //            
 //        }];
         /*api/SCM/shopselldetail?shopid={shopid}&date={date}&pageindex={pageindex}&pagesize={pagesize}*/
-        [self requestMethod:@"SCM/shopselldetail" parameter:@{@"userid":[self getUserId],@"date":[self getEndDate]/*,@"pageindex":@"1",@"pagesize":@"10"*/}];
+        [self requestMethod:@"SCM/selldetail" parameter:@{@"userid":[self getUserId],@"date":[self getEndDate]/*,@"pageindex":@"1",@"pagesize":@"10"*/}];
     }
     
     if (self.type == ControllerTypeCharts) {
@@ -98,7 +98,7 @@
 //        } Error:^(NSDictionary *error) {
 //            
 //        }];
-        [self requestMethod:@"scm/shoptopsell" parameter:@{@"userid":[self getUserId],@"enddate":[self getEndDate],@"startdate":@"2015-08-01"/*,@"pageindex":@"1",@"pagesize":@"10"*/}];
+        [self requestMethod:@"SCM/topsell" parameter:@{@"userid":[self getUserId],@"enddate":[self getEndDate],@"startdate":@"2015-08-01"/*,@"pageindex":@"1",@"pagesize":@"10"*/}];
     }
     
 }
