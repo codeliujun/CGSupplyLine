@@ -51,7 +51,19 @@
 //        
 //    }];
     
-    [self requestMethod:@"scm/subscribelist" parameter:@{@"shopid":[self getShopId],@"date":[self getEndDate],@"status":@(-1)}];
+    //如果是门店
+    
+    NSString *loginType = [ZHConfigObj configObject].userObject.loginType;
+    
+    if ([loginType isEqualToString:@"供应商"]) {
+        /*userid={userid}&pageindex={pageindex}&pagesize={pagesize}*/
+        [self requestMethod:@"SCM/purchaselist" parameter:@{@"userid":[self getUserId]}];
+    }
+    if ([loginType isEqualToString:@"总部"] || [loginType isEqualToString:@"门店"]) {
+        /*userid={userid}&date={date}&pageindex={pageindex}&pagesize={pagesize}&status={status}*/
+        [self requestMethod:@"SCM/subscribelist" parameter:@{@"userid":[self getUserId],@"date":[self getEndDate],@"status":@(-1)}];
+    }
+    
     
 }
 

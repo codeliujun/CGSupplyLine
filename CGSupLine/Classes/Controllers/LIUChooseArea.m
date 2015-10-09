@@ -8,6 +8,7 @@
 
 #import "LIUChooseArea.h"
 
+
 @interface LIUChooseArea ()<UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic,strong)NSArray *areaList;
@@ -42,8 +43,38 @@
     [super viewDidLoad];
     self.title = self.areaTitle;
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
+    [self creatTableHeaderView];
     [self getData];
     // Do any additional setup after loading the view from its nib.
+}
+
+- (void)creatTableHeaderView {
+    
+    //首先创建一个父类的view
+    UIView *headerSupperView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.tableView.width, 44)];
+    CGChoShopHeaderView *headerView = [CGChoShopHeaderView view];
+    headerView.frame = headerSupperView.bounds;
+    [headerSupperView addSubview:headerView];
+    NSInteger index = 0;
+    switch (self.currentArreaType) {
+        case AreaTypeProvince:
+            index = 0;
+            break;
+        case AreaTypeCityid:
+            index = 1;
+            break;
+        case AreaTypeArea:
+            index = 2;
+            break;
+        case AreaTypeShop:
+            index = 3;
+            break;
+    }
+    
+    [headerView proImageHilighted:index];
+    
+    self.tableView.tableHeaderView = headerSupperView;
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -86,13 +117,18 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return self.areaList.count;
+    return self.areaList.count+1;
     
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath  {
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    
+    if (indexPath.row == [tableView numberOfRowsInSection:[tableView numberOfSections]-1]-1) {
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        return cell;
+    }
     
     NSDictionary *area = self.areaList[indexPath.row];
     
@@ -105,6 +141,11 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (indexPath.row == [tableView numberOfRowsInSection:[tableView numberOfSections]-1]-1) {
+        return;
+    }
+    
     WS(ws);
     LIUChooseArea *chooseArea = [[LIUChooseArea alloc]init];
     NSDictionary *currentDic = self.areaList[indexPath.row];
@@ -193,11 +234,10 @@
             break;
     }
     
-    
-    
-    
-    
-    
+}
+
+- (UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    return [UIView new];
 }
 
 - (void)didReceiveMemoryWarning {

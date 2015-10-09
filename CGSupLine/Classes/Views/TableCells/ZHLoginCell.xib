@@ -46,7 +46,7 @@
                                     <constraint firstAttribute="height" constant="30" id="SrK-6k-708"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_tab_member" translatesAutoresizingMaskIntoConstraints="NO" id="Lgk-sw-UkC">
                                 <rect key="frame" x="6" y="5" width="30" height="30"/>
@@ -61,7 +61,7 @@
                                     <constraint firstAttribute="height" constant="30" id="iC7-dy-jVP"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="crb-x9-TXo">
                                 <rect key="frame" x="0.0" y="81" width="260" height="1"/>

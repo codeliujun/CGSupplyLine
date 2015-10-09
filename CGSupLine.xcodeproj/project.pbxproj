@@ -40,6 +40,9 @@
 		85777E611BB51C46003343AB /* ZHNoDataCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85777E601BB51C46003343AB /* ZHNoDataCell.xib */; settings = {ASSET_TAGS = (); }; };
 		8584E1E41BB39FE30084EB63 /* ZHChoLoginTypeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8584E1E21BB39FE30084EB63 /* ZHChoLoginTypeCell.m */; settings = {ASSET_TAGS = (); }; };
 		8584E1E51BB39FE30084EB63 /* ZHChoLoginTypeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8584E1E31BB39FE30084EB63 /* ZHChoLoginTypeCell.xib */; settings = {ASSET_TAGS = (); }; };
+		85899C681BBB82A00028AA87 /* CGChoShopHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85899C661BBB82A00028AA87 /* CGChoShopHeaderView.swift */; settings = {ASSET_TAGS = (); }; };
+		85899C691BBB82A00028AA87 /* CGChoShopHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85899C671BBB82A00028AA87 /* CGChoShopHeaderView.xib */; settings = {ASSET_TAGS = (); }; };
+		85899C6B1BBB83B00028AA87 /* CGBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85899C6A1BBB83B00028AA87 /* CGBaseView.swift */; settings = {ASSET_TAGS = (); }; };
 		859885C41B7843390087D9F3 /* ZHTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 859885C31B7843390087D9F3 /* ZHTextView.m */; };
 		859885D91B78941D0087D9F3 /* PulsingHaloLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 859885D81B78941D0087D9F3 /* PulsingHaloLayer.m */; };
 		85AC17EA1BB43081001F0592 /* ZHBuyerListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 85AC17E91BB43081001F0592 /* ZHBuyerListCell.m */; settings = {ASSET_TAGS = (); }; };
@@ -221,6 +224,10 @@
 		8584E1E11BB39FE30084EB63 /* ZHChoLoginTypeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHChoLoginTypeCell.h; sourceTree = "<group>"; };
 		8584E1E21BB39FE30084EB63 /* ZHChoLoginTypeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHChoLoginTypeCell.m; sourceTree = "<group>"; };
 		8584E1E31BB39FE30084EB63 /* ZHChoLoginTypeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZHChoLoginTypeCell.xib; sourceTree = "<group>"; };
+		85899C621BBB824A0028AA87 /* CGSupLine-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CGSupLine-Bridging-Header.h"; sourceTree = "<group>"; };
+		85899C661BBB82A00028AA87 /* CGChoShopHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGChoShopHeaderView.swift; sourceTree = "<group>"; };
+		85899C671BBB82A00028AA87 /* CGChoShopHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CGChoShopHeaderView.xib; sourceTree = "<group>"; };
+		85899C6A1BBB83B00028AA87 /* CGBaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGBaseView.swift; sourceTree = "<group>"; };
 		859885C21B7843390087D9F3 /* ZHTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHTextView.h; sourceTree = "<group>"; };
 		859885C31B7843390087D9F3 /* ZHTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHTextView.m; sourceTree = "<group>"; };
 		859885D71B78941D0087D9F3 /* PulsingHaloLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PulsingHaloLayer.h; sourceTree = "<group>"; };
@@ -297,7 +304,7 @@
 		EF5F1ACE1B7AF23F0093D55A /* ZHImageOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHImageOperation.h; sourceTree = "<group>"; };
 		EF8391CC1B9335C20025C422 /* ZHApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHApplication.h; sourceTree = "<group>"; };
 		EF8391CD1B9335C20025C422 /* ZHApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHApplication.m; sourceTree = "<group>"; };
-		EFB0AAC21B6D7B5A000033F2 /* CGSupLine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CGSupLine.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EFB0AAC21B6D7B5A000033F2 /* 供应链.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "供应链.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFB0AAC61B6D7B5A000033F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EFB0AAC71B6D7B5A000033F2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EFB0AAC91B6D7B5A000033F2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -495,6 +502,16 @@
 			name = LIUCanlendar;
 			sourceTree = "<group>";
 		};
+		85899C651BBB82750028AA87 /* swiftCode */ = {
+			isa = PBXGroup;
+			children = (
+				85899C661BBB82A00028AA87 /* CGChoShopHeaderView.swift */,
+				85899C671BBB82A00028AA87 /* CGChoShopHeaderView.xib */,
+				85899C6A1BBB83B00028AA87 /* CGBaseView.swift */,
+			);
+			path = swiftCode;
+			sourceTree = "<group>";
+		};
 		859885D61B78941D0087D9F3 /* PulsingHaloLayer */ = {
 			isa = PBXGroup;
 			children = (
@@ -606,7 +623,7 @@
 		EFB0AAC31B6D7B5A000033F2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EFB0AAC21B6D7B5A000033F2 /* CGSupLine.app */,
+				EFB0AAC21B6D7B5A000033F2 /* 供应链.app */,
 				EFB0AADB1B6D7B5A000033F2 /* CGSupLine.xctest */,
 			);
 			name = Products;
@@ -658,6 +675,7 @@
 		EFB0AAEB1B6D7B83000033F2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				85899C651BBB82750028AA87 /* swiftCode */,
 				EFB0AB231B6D8364000033F2 /* Modal */,
 				EFB0AB181B6D7F48000033F2 /* Views */,
 				EFB0AB071B6D7F48000033F2 /* Category */,
@@ -680,6 +698,7 @@
 				EFB0AB021B6D7C59000033F2 /* ZHBaseNavigationController.m */,
 				EF8391CC1B9335C20025C422 /* ZHApplication.h */,
 				EF8391CD1B9335C20025C422 /* ZHApplication.m */,
+				85899C621BBB824A0028AA87 /* CGSupLine-Bridging-Header.h */,
 			);
 			path = RootClasses;
 			sourceTree = "<group>";
@@ -1044,7 +1063,7 @@
 			);
 			name = CGSupLine;
 			productName = ZHTourist;
-			productReference = EFB0AAC21B6D7B5A000033F2 /* CGSupLine.app */;
+			productReference = EFB0AAC21B6D7B5A000033F2 /* 供应链.app */;
 			productType = "com.apple.product-type.application";
 		};
 		EFB0AADA1B6D7B5A000033F2 /* CGSupLineTests */ = {
@@ -1072,6 +1091,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = ZH;
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = Michael;
 				TargetAttributes = {
@@ -1146,6 +1166,7 @@
 				85F7C1531B82CC81000A02AD /* SMS_SDKLocalizable.strings in Resources */,
 				850950EC1BB3E23D00A7163F /* ZHMainHeaderView.xib in Resources */,
 				EFB0AAD31B6D7B5A000033F2 /* Images.xcassets in Resources */,
+				85899C691BBB82A00028AA87 /* CGChoShopHeaderView.xib in Resources */,
 				85777E5C1BB4F4F5003343AB /* ZHBuyChartCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1267,6 +1288,7 @@
 				EFB0AB931B6E2CA3000033F2 /* ZHMoreController.m in Sources */,
 				EF5F1AD01B7AF23F0093D55A /* ZHImageCache.m in Sources */,
 				EFB0AB691B6E20CE000033F2 /* BCTableView.m in Sources */,
+				85899C681BBB82A00028AA87 /* CGChoShopHeaderView.swift in Sources */,
 				EFB0AACB1B6D7B5A000033F2 /* AppDelegate.m in Sources */,
 				85D4B2031B7C6FCC00C274DF /* NSObject+MJCoding.m in Sources */,
 				851C5D581BB3FAD900043122 /* ZHSellInfoCell.m in Sources */,
@@ -1295,6 +1317,7 @@
 				EFB0AB1E1B6D7F48000033F2 /* UIColor+Additions.m in Sources */,
 				851C5D621BB4DD6700043122 /* ZHSellDetailController.m in Sources */,
 				EFB0AB1F1B6D7F48000033F2 /* UIImage+Additions.m in Sources */,
+				85899C6B1BBB83B00028AA87 /* CGBaseView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1365,6 +1388,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1409,6 +1433,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1431,8 +1456,10 @@
 			baseConfigurationReference = 21C144809E62E36E5634DFD5 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1445,9 +1472,11 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "$(inherited)";
 				PODS_ROOT = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.xky.zhihuilvyou;
-				PRODUCT_NAME = CGSupLine;
-				PROVISIONING_PROFILE = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ykg.supplyline;
+				PRODUCT_NAME = "供应链";
+				PROVISIONING_PROFILE = "168abb26-900d-465a-9425-a58661f5107a";
+				SWIFT_OBJC_BRIDGING_HEADER = "CGSupLine/Classes/RootClasses/CGSupLine-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Debug;
@@ -1457,8 +1486,10 @@
 			baseConfigurationReference = 7D1ABF1902952DD0AC31EBF0 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1471,9 +1502,10 @@
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "$(inherited)";
 				PODS_ROOT = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.xky.zhihuilvyou;
-				PRODUCT_NAME = CGSupLine;
-				PROVISIONING_PROFILE = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ykg.supplyline;
+				PRODUCT_NAME = "供应链";
+				PROVISIONING_PROFILE = "168abb26-900d-465a-9425-a58661f5107a";
+				SWIFT_OBJC_BRIDGING_HEADER = "CGSupLine/Classes/RootClasses/CGSupLine-Bridging-Header.h";
 				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Release;
@@ -1492,9 +1524,9 @@
 				);
 				INFOPLIST_FILE = CGSupLineTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.wansheng.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ykg.supplyline;
 				PRODUCT_NAME = CGSupLine;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CGSupLine.app/CGSupLine";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/供应链.app/供应链";
 			};
 			name = Debug;
 		};
@@ -1508,9 +1540,9 @@
 				);
 				INFOPLIST_FILE = CGSupLineTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.wansheng.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ykg.supplyline;
 				PRODUCT_NAME = CGSupLine;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CGSupLine.app/CGSupLine";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/供应链.app/供应链";
 			};
 			name = Release;
 		};

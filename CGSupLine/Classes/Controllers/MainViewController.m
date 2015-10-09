@@ -30,9 +30,41 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    self.title = @"首页";
+    self.title = [ZHConfigObj configObject].userObject.lastname;
     [self creatTableHeaderView];
     [self creatCell];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self getData];
+}
+
+- (void)getData {
+    
+    [self requestMethod:@"SCM/summary" parameter:@{@"userid":[self getUserId],@"date":[self getEndDate]} Success:^(NSDictionary *result) {
+        [self updateLabelWithData:result[@"Data"]];
+    } Error:^(NSDictionary *error) {
+        
+    }];
+    
+}
+
+- (NSString *)getEndDate {
+    
+    NSDate *date = [NSDate new];
+    NSDateFormatter *df = [[NSDateFormatter alloc]init];
+    df.dateFormat = @"YYYY-MM-dd";
+    
+    return [df stringFromDate:date];
+}
+
+- (void)updateLabelWithData:(NSDictionary *)data {
+    
+    [_cell1 setCellPric:[data[@"今日毛利"] floatValue]];
+    [_cell2 setCellPric:[data[@"本月毛利"] floatValue]];
+    [_cell3 setCellPric:[data[@"今日开销"] floatValue]];
+    
 }
 
 - (void)creatTableHeaderView {
@@ -69,6 +101,11 @@
 }
 
 - (void)chooseArea {
+    NSString *loginType = [ZHConfigObj configObject].userObject.loginType;
+    if ([loginType isEqualToString:@"门店"]) {
+        return;
+    }
+    
     WS(ws);
     LIUChooseArea *chooseArea = [[LIUChooseArea alloc]init];
     chooseArea.currentArreaType = AreaTypeProvince;
@@ -98,12 +135,7 @@
     [_headerView setCustomViewContent:areaStr];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-//    if ([self userIsLogin]) { //不要判断了
-//        [self showLoginView];
-//    }
-}
+
 
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

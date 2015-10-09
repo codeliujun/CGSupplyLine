@@ -20,6 +20,7 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    self.areaLabel.text = [ZHConfigObj configObject].userObject.lastname;
     self.iconImageView.layer.cornerRadius = self.iconImageView.height*0.5;
     self.iconImageView.layer.masksToBounds = YES;
 }

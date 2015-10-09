@@ -57,7 +57,13 @@
     self.orderNumber.text = self.data[@"SubscribeNum"];
     self.shopName.text = self.data[@"UserName"];
     self.orderStatus.text = self.data[@"StateStr"];
-    self.addressLabel.text = self.data[@"Receive_Address"];
+    NSString *str = self.data[@"Receive_Address"];
+    if ([str isEqual:[NSNull null]]) {
+        self.addressLabel.text = @"null";
+    }else {
+        self.addressLabel.text = self.data[@"Receive_Address"];
+    }
+    
     self.timeLabel.text = [self getDateStr];
     self.priceLabel.text = [NSString stringWithFormat:@"￥%.2f",[self.data[@"Total"] floatValue]];
     
@@ -66,6 +72,11 @@
 - (NSString *)getDateStr {
     
     NSString *time1 = self.data[@"SubscribeDate"];
+    
+    if ([time1 isEqual:[NSNull null]] || time1 == nil || [time1 isEqualToString:@""]) {
+        time1 = self.data[@"PurchaseDate"];
+    }
+    
     if ([time1 isEqual:[NSNull null]]) {
         return @"时间没有";
     }

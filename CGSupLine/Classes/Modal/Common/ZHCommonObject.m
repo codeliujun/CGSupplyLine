@@ -134,7 +134,7 @@ static ZHCommonObject *oneObject = nil;
     }
     
     if ([loginType isEqualToString:@"门店"]) {
-        array = @[navCar,navFind, navMore];
+        array = @[navCar, navMyInfo, navFind, navMore];
     }
 
     tabBarcontroller.viewControllers = array;
