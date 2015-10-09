@@ -34,4 +34,8 @@
 
 @property (nonatomic,strong)NSString *shopId;
 
+@property (nonatomic,strong)NSString *loginType;
+
+@property (nonatomic,strong)NSString *shopName;
+
 @end

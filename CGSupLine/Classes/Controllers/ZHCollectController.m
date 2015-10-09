@@ -52,6 +52,23 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     ZHSellInfoController *sellInfoVC = [[ZHSellInfoController alloc]init];
+    
+    switch (indexPath.row) {
+        case 0:
+            sellInfoVC.type = ControllerTypeCountList;
+            break;
+        case 1:
+            sellInfoVC.type = ControllerTypeDayList;
+            break;
+        case 2:
+            sellInfoVC.type = ControllerTypeCharts;
+            break;
+            
+        default:
+            break;
+    }
+    
+    
     sellInfoVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:sellInfoVC animated:YES];
     

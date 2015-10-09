@@ -7,8 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "ZHLoginController.h"
 #import <SMS_SDK/SMS_SDK.h>
-#import "ZHCommonObject.h"
+//#import "ZHCommonObject.h"
 #import <GPSKit/CLHGPSKit.h>
 
 const NSString  *mobAppKey =  @"9b39e0567460";
@@ -37,7 +38,11 @@ const NSString  *mobAppSecret = @"90c5f30df0fa5ae6bee7f5eef9eafc6c";
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     
     // 进入应用
-    self.window.rootViewController = [ZHCommonObject prepareTabbars];
+    //self.window.rootViewController = [ZHCommonObject prepareTabbars];
+    UIViewController *login = [[ZHLoginController alloc]init];
+    UINavigationController *navi = [[UINavigationController alloc]initWithRootViewController:login];
+    self.window.rootViewController = navi;
+    
     
     //注册验证码通知
     [SMS_SDK registerApp:mobAppKey withSecret:mobAppSecret];

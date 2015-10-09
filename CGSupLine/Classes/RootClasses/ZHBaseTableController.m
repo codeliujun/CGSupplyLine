@@ -7,7 +7,6 @@
 //
 
 #import "ZHBaseTableController.h"
-#import <ReactiveCocoa.h>
 
 @interface ZHBaseTableController ()
 
@@ -18,6 +17,7 @@
 
 - (id)init {
     if (self = [super init]) {
+        _dataListArray = @[].mutableCopy;
         isRefresh = YES;
         nextPage = 0;
         currentPage = 1;
@@ -29,27 +29,12 @@
     return self;
 }
 
-- (NSMutableArray *)dataListArray {
-    if (!_dataListArray) {
-        _dataListArray = @[].mutableCopy;
-    }
-    
-    return _dataListArray;
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
     [_tableView refreshHeaderEnable:NO];
     [_tableView refreshTailEnable:NO];
-    
-    [[RACObserve(self, self.dataListArray)
-      deliverOn:RACScheduler.mainThreadScheduler]
-     subscribeNext:^(NSArray *newArray) {
-//         NSLog(@"newArray: %@", newArray);
-         [self.tableView reloadData];
-     }];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -57,7 +42,7 @@
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 
-    if (self.dataListArray.count == 0) {
+    if (_dataListArray.count == 0) {
         [self loadData];
     }
 }
@@ -84,41 +69,47 @@
    
     if (_canLoad) {
         
-        NSArray *array = nil;
-        if (listObj) {
-            array = [[listObj class] objectArrayWithKeyValuesArray:[result objectForKey:@"list"]];
-        } else {
-            array = [result objectForKey:@"list"];
-        }
+        NSArray *array = result[@"Data"];
+//        if (listObj) {
+//            array = [[listObj class] objectArrayWithKeyValuesArray:[result objectForKey:@"list"]];
+//        } else {
+//            array = [result objectForKey:@"list"];
+//        }
        
-        nextPage = [result[@"next_page"] integerValue];
-        if (nextPage == 0) {
-            canLoadMore = NO;
-        } else {
+//        nextPage = [result[@"next_page"] integerValue];
+//        if (nextPage == 0) {
+//            canLoadMore = NO;
+//        } else {
+//            canLoadMore = YES;
+//        }
+        
+        if (array.count >= 20) {
+            nextPage = currentPage++;
             canLoadMore = YES;
+        }else {
+            canLoadMore = NO;
         }
         
         if (isRefresh) {
             isRefresh = NO;
-            // 支持kvo
-            [[self mutableArrayValueForKey:@"dataListArray"] removeAllObjects];
+            [_dataListArray removeAllObjects];
         }
         
         if (array.count > 0){ //既然是刷新，那么当没有订单返回也必须要removeAllObject
-            // 支持kvo
-            [[self mutableArrayValueForKey:@"dataListArray"] addObjectsFromArray:array];
+            [_dataListArray addObjectsFromArray:array];
         }
         
         [_tableView finishLoadData:YES];
         _tableView.refreshHeaderView.state = EGOPullRefreshNormal;
+        [_tableView reloadData];
     }
 }
 
 - (void)requestMethod:(NSString *)method parameter:(NSDictionary *)parameters {
     NSMutableDictionary *dic = [NSMutableDictionary dictionaryWithDictionary:parameters];
     if (_canLoad) {
-        [dic setValue:@(currentPage) forKey:@"page"];
-        [dic setValue:@(20) forKey:@"page_size"];
+        [dic setValue:@(currentPage) forKey:@"pageindex"];
+        [dic setValue:@(20) forKey:@"pagesize"];
     }
     
     [super requestMethod:method parameter:dic];
@@ -197,7 +188,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.dataListArray.count;
+    return _dataListArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -227,6 +218,14 @@
 - (void)keyboardWillShow:(NSNotification *)notification {
     [super keyboardWillShow:notification];
     
+//    CGRect rect = [notification.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
+//    __block CGRect frame = self.view.frame;
+//    [UIView animateWithDuration:[notification.userInfo[UIKeyboardAnimationDurationUserInfoKey] floatValue] delay:0.0f options:[notification.userInfo[UIKeyboardAnimationCurveUserInfoKey] integerValue] animations:^{
+//        frame.origin.y = -rect.size.height;
+//        self.tableView.frame = frame;
+//    } completion:^(BOOL finished) {
+//        
+//    }];
 }
 
 @end

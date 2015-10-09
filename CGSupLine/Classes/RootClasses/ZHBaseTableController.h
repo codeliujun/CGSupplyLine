@@ -14,6 +14,7 @@
 #import "BCTableView.h"
 
 @interface ZHBaseTableController : ZHBaseViewController <UITableViewDataSource, UITableViewDelegate> {
+   // NSMutableArray *dataListArray;
     id listObj;
     
     NSInteger currentPage;
@@ -25,7 +26,7 @@
 }
 
 @property (weak, nonatomic) IBOutlet BCTableView *tableView;
-@property (strong, nonatomic) NSMutableArray *dataListArray;
+@property (nonatomic,strong)NSMutableArray *dataListArray;
 
 - (void)loadMore;
 - (void)refresh;

@@ -10,4 +10,6 @@
 
 @interface ZHSellInfoCell : UITableViewCell
 
+@property(nonatomic,strong)NSDictionary *data;
+
 @end

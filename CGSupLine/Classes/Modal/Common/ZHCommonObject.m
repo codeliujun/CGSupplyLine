@@ -101,28 +101,42 @@ static ZHCommonObject *oneObject = nil;
     ZHBaseNavigationController *navCar = [[ZHBaseNavigationController alloc] initWithRootViewController:mainview];
     navCar.tabBarItem.image = [UIImage imageNamed:@"main_n"];
     navCar.tabBarItem.selectedImage = [UIImage imageNamed:@"main_h"];
-    navCar.tabBarItem.title = @"首页";
+    navCar.tabBarItem.title = @"主页";
     
     ZHMyInfoController *myInfo = [[ZHMyInfoController alloc] init];
     ZHBaseNavigationController *navMyInfo = [[ZHBaseNavigationController alloc] initWithRootViewController:myInfo];
     navMyInfo.tabBarItem.image = [UIImage imageNamed:@"dong_tai_n"];
     navMyInfo.tabBarItem.selectedImage = [UIImage imageNamed:@"dong_tai_h"];
-    navMyInfo.tabBarItem.title = @"动态";
+    navMyInfo.tabBarItem.title = @"采购审核";
 
     
     ZHCollectController *collectView = [[ZHCollectController alloc] init];
     ZHBaseNavigationController *navFind = [[ZHBaseNavigationController alloc] initWithRootViewController:collectView];
     navFind.tabBarItem.image = [UIImage imageNamed:@"message_n"];
     navFind.tabBarItem.selectedImage = [UIImage imageNamed:@"message_h"];
-    navFind.tabBarItem.title = @"信息";
+    navFind.tabBarItem.title = @"我的报表";
     
     ZHMoreController *moreView = [[ZHMoreController alloc] initWithNibName:nil bundle:nil];
     ZHBaseNavigationController *navMore = [[ZHBaseNavigationController alloc] initWithRootViewController:moreView];
     navMore.tabBarItem.image = [UIImage imageNamed:@"my_n"];
     navMore.tabBarItem.selectedImage = [UIImage imageNamed:@"my_h"];
-    navMore.tabBarItem.title = @"我的";
+    navMore.tabBarItem.title = @"个人中心";
     
-    NSArray *array = @[navCar, navMyInfo, navFind, navMore];
+    NSArray *array = nil;
+    NSString *loginType = [ZHConfigObj configObject].userObject.loginType;
+    
+    if ([loginType isEqualToString:@"总部"]) {
+        array = @[navCar, navMyInfo, navFind, navMore];
+    }
+    
+    if ([loginType isEqualToString:@"供应商"]) {
+        array = @[navMyInfo, navFind, navMore];
+    }
+    
+    if ([loginType isEqualToString:@"门店"]) {
+        array = @[navCar,navFind, navMore];
+    }
+
     tabBarcontroller.viewControllers = array;
     
     return tabBarcontroller;
